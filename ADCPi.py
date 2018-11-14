@@ -142,6 +142,7 @@ class ADCPi:
 
         return voltage
 
+
     def read_raw(self, channel):
         """
         reads the raw value from the selected adc channel - channels 1 to 8

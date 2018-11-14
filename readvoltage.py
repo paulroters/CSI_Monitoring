@@ -36,29 +36,3 @@ def writetofile(texttowrtite):
     file.close()
 
 
-def main():
-    '''
-    Main program function
-    '''
-
-    adc = ADCPi(0x68, 0x69, 12)
-
-    print("Logging...")
-
-    while True:
-
-        # read from adc channels and write to the log file
-        writetofile("Channel 1: %02f\n" % (adc.read_voltage(1)*5))
-        writetofile("Channel 2: %02f\n" % (adc.read_voltage(2)*5))
-        writetofile("Channel 3: %02f\n" % (adc.read_voltage(3)*5))
-        writetofile("Channel 4: %02f\n" % (adc.read_voltage(4)*5))
-        writetofile("Channel 5: %02f\n" % (adc.read_voltage(5)*5))
-        writetofile("Channel 6: %02f\n" % (adc.read_voltage(6)*5))
-        writetofile("Channel 7: %02f\n" % (adc.read_voltage(7)*5))
-        writetofile("Channel 8: %02f\n" % (adc.read_voltage(8)*5))
-
-        # wait 1 second before reading the pins again
-        time.sleep(1)
-
-if __name__ == "__main__":
-    main()
